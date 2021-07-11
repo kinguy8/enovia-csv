@@ -1,11 +1,21 @@
 export const FETCH_URL = "FETCH_URL"
+export const NEXT_PAGE = "NEXT_PAGE"
+export const COLUMN_CHART = "columnChart"
+export const PIE_CHART = "pieChart"
+export const TABLE_CHART = "tableChart"
+export const DONUT_CHART = "donutChart"
+export const LINE_CHART = "lineChart"
+export const FILTER_DATA = "FILTER_DATA"
+export const CHART = "CHART"
 
 
 export const DATA = {
     "msg": "",
-    "date": "", 
+    "data": "", 
     "url": "",
-    "loading": false
+    "loading": false,
+    "isNextOpen": false,
+    "chartType": ""
 }
 
 export const tempData = [

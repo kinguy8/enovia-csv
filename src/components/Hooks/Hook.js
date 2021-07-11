@@ -6,12 +6,13 @@ import { FETCH_URL, DATA } from '../../Constants/Constants'
 export const useEnoviaHook = () => {
     const [state, setState] = useReducer(Reducer, DATA)
 
-    const setDate = useCallback(data => {
+    const setData = useCallback((type, data) => {
         setTimeout(() => {
             setState({
-                type: FETCH_URL,
+                type: type,
                 payload: data,
             })
         })
     }, [])
+    return { state, setState, setData }
 }
