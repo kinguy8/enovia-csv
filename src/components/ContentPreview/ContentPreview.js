@@ -2,23 +2,15 @@ import React, { useContext } from 'react'
 import ContentItem from '../ContentItem/ContentItem'
 import Context from '../../Context/Context'
 import { NEXT_PAGE } from '../../Constants/Constants'
+import Button from '../Button/Button'
 
 const ContentPreview = () => {
     const enovia = useContext(Context)
-
-    const openNextPage = () => {
-        console.log("isNextOpen")
-        enovia.setData(NEXT_PAGE, enovia.state)
-        
-    }
     return (
-        <div className="content">
-        <div className="container-table100">
-            <div className="wrap-table100">
-                <div className="table100">
-                    <table>
+        <div className="table-view">
+                    <table className="content-table">
                         <thead>
-                        <tr className="table100-head">
+                        <tr>
                             {enovia.state.data.header.map((content) =>{
                                 return (
                                     <th className="column1">{content}</th>
@@ -26,7 +18,7 @@ const ContentPreview = () => {
                             })}
                             </tr>
                         </thead>
-                    </table>
+                    
                     <tbody>
                         {enovia.state.data.content.map((value, idx) => {
                             return (
@@ -36,12 +28,7 @@ const ContentPreview = () => {
                             )
                         })}
                     </tbody>
-                </div>
-            </div>
-        </div>
-        <button 
-        className="btn btn-primary next-view"
-        onClick={() => openNextPage()}>Далее</button>
+                    </table>
         </div>
     )
 }
